@@ -1,27 +1,38 @@
 <img class="burger-img mx-auto d-block" src="/assets/images/burger-img.png" alt="">
 
 <div class="row">
-  <div class="col-sm-6 mx-auto devour">
+  <div class="col-sm-6">
     <h2>Burgers you need to devour!</h2>
-    <ul>
-      {{#each burgers}}
-      {{#unless devoured}}
-      {{> burgers/burger-block appetite=true}}
-           {{/unless}}
-      {{/each}}
-    </ul>
+     <div class="row">
+      <div class="col-sm-12 mx-auto devour">
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block appetite=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="col-sm-6 mx-auto devour">
-    <h2>Burgers you've devoured!</h2>
-    <ul>
-      {{#each burgers}}
-      {{#if devoured}}
-      {{> burgers/burger-block appetite=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+  <div class="col-sm-6">
+    <h2>Burgers devoured!</h2>
+    <div class="row">
+      <div class="col-sm-12 mx-auto devour">
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block appetite=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
 </div>
-</div>
+
+
+
+
 <h2>Add a burger</h2>
 <form class="create-form">
 
@@ -36,5 +47,5 @@
     <input type="radio" name="devoured" value="0"> not devoured... YET!
   </div>
 
-  <button type="submit">Add a Burger!</button>
-</form>
+  <button class="btn submit-btn" type="submit">Add Burger</button>
+  </form> 
